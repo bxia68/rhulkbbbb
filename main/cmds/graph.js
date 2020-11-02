@@ -143,8 +143,8 @@ async function update(playerid) {
     fields: 'nickname, hidden_profile'
   })
 
-  if (memberName.body.data[playerid].hidden_profile) continue
-  if (updated_stats.body.data[playerid] === null) continue
+  if (memberName.body.data[playerid].hidden_profile) return
+  if (updated_stats.body.data[playerid] === null) return
 
   updated_stats = updated_stats.body.data[playerid]
 

@@ -31,19 +31,16 @@ bot.on('ready', async () => {
 });
 
 bot.on('message', async message => {
-  if (message.content.toLowerCase().includes("thunderer") == true) {
+  if (message.content.toLowerCase().includes("thunderer")) {
     console.info('Loading Ace Copypasta...')
     const attachment = new MessageAttachment('https://cdn.discordapp.com/attachments/700145176655691893/760377207738204172/image0.png');
     message.channel.send(attachment);
-  } 
+  }
   if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
 
   var command = message.content.toLowerCase().slice(process.env.PREFIX.length).split(' ')[0];
 
   var args = message.content.split(' ').slice(1);
-  if (message.channel.id != '707382908242886757') {
-    return;
-  } 
   if (message.author.id == '329081343797624832') {
     switch (command) {
       case 'lb':
