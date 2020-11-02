@@ -43,6 +43,11 @@ bot.on('message', async message => {
   var args = message.content.split(' ').slice(1);
   if (message.author.id == '329081343797624832') {
     switch (command) {
+      case 't':
+        console.log(`sending message ${args.slice(1).join(' ')}`)
+        bot.channels.cache.get(args[0]).send(args.slice(1).join(' '))
+        break
+
       case 'lb':
         ballistics.listKeys()
         break
