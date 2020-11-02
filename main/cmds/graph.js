@@ -137,6 +137,15 @@ async function update(playerid) {
     fields: 'last_battle_time, ship_id, pvp.battles, pvp.damage_dealt, pvp.wins, pvp.frags'
   })
 
+  let memberName = await superagent.get(memberNameApi).query({
+    application_id: apikey,
+    account_id: playerid,
+    fields: 'nickname, hidden_profile'
+  })
+
+  if (memberName.body.data[playerid].hidden_profile) continue
+  if (updated_stats.body.data[playerid] === null) continue
+
   updated_stats = updated_stats.body.data[playerid]
 
   for (var i = 0; i < updated_stats.length; i++) {
