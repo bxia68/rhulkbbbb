@@ -36,6 +36,12 @@ bot.on('message', async message => {
     const attachment = new MessageAttachment('https://cdn.discordapp.com/attachments/700145176655691893/760377207738204172/image0.png');
     message.channel.send(attachment);
   }
+  if (message.content.toLowerCase().includes("smolensk")) {
+    console.info('Loading sexy rhulk screenshot...')
+    const attachment = new MessageAttachment('  https://cdn.discordapp.com/attachments/711467023107883019/772979252399439882/unknown.png');
+    message.channel.send(attachment);
+  }
+
   if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
 
   var command = message.content.toLowerCase().slice(process.env.PREFIX.length).split(' ')[0];
