@@ -38,7 +38,7 @@ bot.on('message', async message => {
   }
   if (message.content.toLowerCase().includes("smolensk")) {
     console.info('Loading sexy rhulk screenshot...')
-    const attachment = new MessageAttachment('  https://cdn.discordapp.com/attachments/711467023107883019/772979252399439882/unknown.png');
+    const attachment = new MessageAttachment('https://cdn.discordapp.com/attachments/711467023107883019/772979252399439882/unknown.png');
     message.channel.send(attachment);
   }
 
