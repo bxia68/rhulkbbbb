@@ -20,6 +20,7 @@ const link = require('./cmds/link')
 const help = require('./cmds/help')
 const test = require('./cmds/test')
 const clan_stats = require('./cmds/clan_stats')
+const pr = require('./cmds/pr')
 const ballistics = require('./cmds/ballistics/data')
 
 bot.on('ready', async () => {
@@ -115,6 +116,11 @@ bot.on('message', async message => {
   }
 
   switch (command) {
+
+    case 'pr':
+      let expected_pr = await pr.getPr(args[0], args[1], args[2], args[3])
+      message.channel.send(expected_pr)
+      break
 
     case 'stats':
       switch(args[1]) {
