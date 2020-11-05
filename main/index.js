@@ -19,6 +19,7 @@ const id = require('./cmds/id')
 const link = require('./cmds/link')
 const help = require('./cmds/help')
 const test = require('./cmds/test')
+const clan_stats = require('./cmds/clan_stats')
 const ballistics = require('./cmds/ballistics/data')
 
 bot.on('ready', async () => {
@@ -114,6 +115,17 @@ bot.on('message', async message => {
   }
 
   switch (command) {
+
+    case 'stats':
+      switch(args[1]) {
+        case 'clan':
+          let stats_embed = await clan_stats.getStats(args[0], args[2], args[3])
+          message.channel.send({
+            embed: stats_embed
+          })
+          break
+      }
+      break
 
     case 'help':
       message.channel.send({
