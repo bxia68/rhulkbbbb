@@ -8,7 +8,7 @@ const key = '3e2c393d58645e4e4edb5c4033c56bd8'
 
 var ships;
 var map = new Map();
-var badShips = ["Alaska B", "Asashio B", "Atago B", "Tirpitz B", "Massachusetts B", "Graf Zeppelin B", "Sims B"]
+var badShips = ["Alaska B", "Asashio B", "Atago B", "Tirpitz B", "Massachusetts B", "Graf Zeppelin B", "Sims B", "Cossack B", "Jean Bart B", "ARP Yamato"]
 
 async function handler() {
   for (let i = 1; i < 6; i++) {
