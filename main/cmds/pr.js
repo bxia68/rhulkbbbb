@@ -8,8 +8,12 @@ async function getPr(ship, dmg, kills, win) {
   let ship_expected_values = data.enmap.get('expected_values', ship_id)
 
   let rWins
-  if (win.toLowerCase() === 'w') rWins = 1 / (ship_expected_values.win_rate / 100)
-  else rWins = 0
+  if (isNaN(win)) {
+    if (win.toLowerCase() === 'w') rWins = 1 / (ship_expected_values.win_rate / 100)
+    else rWins = 0
+  } else {
+    rWins = win / (ship_expected_values.win_rate / 100)
+  }
 
   let rFrags = kills / ship_expected_values.average_frags
   let rDmg = dmg * 1000 / ship_expected_values.average_damage_dealt
